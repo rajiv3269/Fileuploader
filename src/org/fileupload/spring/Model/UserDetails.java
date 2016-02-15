@@ -8,6 +8,14 @@ public class UserDetails {
 	private String firstName;
 	private String lastName;
 	private String password;
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	private Date created;
 	
 	public int getUserId() {
@@ -42,12 +50,13 @@ public class UserDetails {
 		this.created = created;
 	}
 	public UserDetails(int userId, String firstName, String lastName,
-			String password) {
+			String password,String email) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
+		this.email = email;
 		this.created = new Date();
 	}
 	
@@ -58,7 +67,8 @@ public class UserDetails {
 	public String toString() {
 		return "UserDetails [userId=" + userId + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", password=" + password
-				+ ", created=" + created + "]";
+				+ ", email=" + email + ", created=" + created + "]";
 	}
+	
 	
 }

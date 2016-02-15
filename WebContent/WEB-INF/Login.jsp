@@ -14,8 +14,8 @@
 		<table border="0px" align="center">
 
 			<tr>
-				<td>UserName:</td>
-				<td><input type="text" name="username" placeholder="Name"><span id="username"></span></td>
+				<td>Email:</td>
+				<td><input type="text" name="email" placeholder="email"><span id="email"></span></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
