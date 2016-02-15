@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class ValidUser {
 	
-	@NotEmpty(message = "Enter Email")
+	@NotEmpty
 	private String email;
 	@NotEmpty(message = "Enter Password")
 	private String password;

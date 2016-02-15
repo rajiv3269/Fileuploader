@@ -7,9 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
+<form:errors path="validuser.*"></form:errors>
 </head>
 <body>
-	<form name="Login" action="/Pages/onSubmit" method="POST">
+	<form name="Login" action="/onSubmit" method="POST">
 
 		<table border="0px" align="center">
 
