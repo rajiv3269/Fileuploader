@@ -2,12 +2,17 @@ package org.fileupload.spring.Model;
 
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class UserDetails {
 
-	private int userId;
+	/*@NotEmpty
+	private int userId;*/
+	@NotEmpty(message = "Enter Name")
 	private String firstName;
-	private String lastName;
+	@NotEmpty(message = "Enter Password")
 	private String password;
+	@NotEmpty(message = "Enter Email")
 	private String email;
 	
 	public String getEmail() {
@@ -18,24 +23,18 @@ public class UserDetails {
 	}
 	private Date created;
 	
-	public int getUserId() {
+	/*public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
+	}*/
 
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 	public String getPassword() {
 		return password;
@@ -49,12 +48,11 @@ public class UserDetails {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-	public UserDetails(int userId, String firstName, String lastName,
+	public UserDetails(/*int userId, */String firstName,
 			String password,String email) {
 		super();
-		this.userId = userId;
+		//this.userId = userId;
 		this.firstName = firstName;
-		this.lastName = lastName;
 		this.password = password;
 		this.email = email;
 		this.created = new Date();
@@ -65,8 +63,8 @@ public class UserDetails {
 	}
 	@Override
 	public String toString() {
-		return "UserDetails [userId=" + userId + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", password=" + password
+		return "UserDetails [userId=" /*+ userId */+ ", firstName=" + firstName
+				 + ", password=" + password
 				+ ", email=" + email + ", created=" + created + "]";
 	}
 	

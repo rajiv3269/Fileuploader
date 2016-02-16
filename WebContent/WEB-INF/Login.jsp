@@ -10,7 +10,7 @@
 <form:errors path="validuser.*"></form:errors>
 </head>
 <body>
-	<form name="Login" action="/onSubmit" method="POST">
+	<form name="Login" action="\FileUploader\OnSubmitLogin" method="POST">
 
 		<table border="0px" align="center">
 

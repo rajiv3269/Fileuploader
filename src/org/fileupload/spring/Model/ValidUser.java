@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class ValidUser {
 	
-	@NotEmpty
+	@NotEmpty(message = "Enter Email")
 	private String email;
 	@NotEmpty(message = "Enter Password")
 	private String password;
@@ -28,8 +28,8 @@ public class ValidUser {
 	}
 	public ValidUser() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
 	public String toString() {
 		return "ValidUser [email=" + email + ", password=" + password + "]";
