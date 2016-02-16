@@ -6,8 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class UserDetails {
 
-	/*@NotEmpty
-	private int userId;*/
+	private int userId;
 	@NotEmpty(message = "Enter Name")
 	private String firstName;
 	@NotEmpty(message = "Enter Password")
@@ -23,12 +22,12 @@ public class UserDetails {
 	}
 	private Date created;
 	
-	/*public int getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}*/
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -48,10 +47,10 @@ public class UserDetails {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-	public UserDetails(/*int userId, */String firstName,
+	public UserDetails(int userId, String firstName,
 			String password,String email) {
 		super();
-		//this.userId = userId;
+		this.userId = userId;
 		this.firstName = firstName;
 		this.password = password;
 		this.email = email;
@@ -63,7 +62,7 @@ public class UserDetails {
 	}
 	@Override
 	public String toString() {
-		return "UserDetails [userId=" /*+ userId */+ ", firstName=" + firstName
+		return "UserDetails [userId=" + userId + ", firstName=" + firstName
 				 + ", password=" + password
 				+ ", email=" + email + ", created=" + created + "]";
 	}

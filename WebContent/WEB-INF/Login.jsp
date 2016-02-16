@@ -28,6 +28,7 @@
 				<td></td>
 				<td><input type="submit" value="Submit"> &nbsp&nbsp<input
 					type="reset" value="Reset"></td>
+					<td><a href="Signup">SignUp</a></td>
 			</tr>
 
 		</table>
