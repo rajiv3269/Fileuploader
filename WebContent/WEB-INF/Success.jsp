@@ -9,12 +9,11 @@
 <body>
 <center>
 <h1>
-
-Hello ${userdetails.firstName} 
-
+Hello     ${userdetails.firstName} 
 </h1>
-
-
+<h3>
+Your account is created Please <a href="Login">click</a> to login.
+</h3>
 </center>
 </body>
-</html>
+</html>	
