@@ -2,6 +2,7 @@ package org.fileupload.spring.Controller;
 
 import javax.validation.Valid;
 
+import org.fileupload.spring.Model.Unregister;
 import org.fileupload.spring.Model.UserDetails;
 import org.fileupload.spring.Model.ValidUser;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,12 @@ public class LoginController {
 	public String getSignUpForm(){
 		return "SignUp";  
 	}
+	
+	@RequestMapping(value = "/Unsub",method = RequestMethod.GET)
+	public String cancelRegiter(){
+		return "Unsubscribe";  
+	}
+
 	@RequestMapping(value = "/OnSubmitLogin",method = RequestMethod.POST)
 	public String submitLogin(@Valid @ModelAttribute("validuser") ValidUser validuser, BindingResult result){
 
@@ -37,5 +44,14 @@ public class LoginController {
 			return "SignUp";  
 		}
 		return "Success";
+	}
+	
+	@RequestMapping(value = "/OnSubmitunsubscribe",method = RequestMethod.POST)
+	public String unregister(@Valid @ModelAttribute("Unregister") Unregister Unregister, BindingResult result){
+
+		if(result.hasErrors()){
+			return "Unsubscribe";
+		}
+		return "Thanks";
 	}
 }
