@@ -39,7 +39,7 @@
 				<td></td>
 				<td><input type="submit" value="Submit"> <input
 					type="reset" value="Reset"></td>
-
+				<td><a href="Login">Login</a></td>
 			</tr>
 
 		</table>
