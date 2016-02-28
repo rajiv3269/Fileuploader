@@ -2,9 +2,11 @@ package org.fileupload.spring.Controller;
 
 import javax.validation.Valid;
 
+import org.fileupload.spring.DAO.UserDao;
 import org.fileupload.spring.Model.Unregister;
 import org.fileupload.spring.Model.UserDetails;
 import org.fileupload.spring.Model.ValidUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginController {
+	
+	@Autowired
+	private UserDao userdao;
 
 	@RequestMapping(value = "/Login",method = RequestMethod.GET)
 	public String getLoginForm(){
@@ -35,6 +40,7 @@ public class LoginController {
 		if(result.hasErrors()){
 			return "Login";
 		}
+		
 		return "redirect:/Signup";
 	}
 
@@ -43,6 +49,8 @@ public class LoginController {
 		if(result.hasErrors()){
 			return "SignUp";  
 		}
+		
+		userdao.insertUser(userdetails);
 		return "Success";
 	}
 	
