@@ -31,6 +31,8 @@ public class UserDetails {
 	private String email;
 	@OneToOne(mappedBy="userdetails")
 	private ValidUser validuser;
+	@Column(name = "Create_Date")
+	private Date created;
 	
 	public String getEmail() {
 		return email;
@@ -38,8 +40,6 @@ public class UserDetails {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private Date created;
-	
 	public int getUserId() {
 		return userId;
 	}
@@ -79,11 +79,11 @@ public class UserDetails {
 		this.password = password;
 		this.email = email;
 		this.validuser = validuser;
-		this.created = created;
+		this.created = new Date();
 	}
 	public UserDetails() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 	@Override
 	public String toString() {

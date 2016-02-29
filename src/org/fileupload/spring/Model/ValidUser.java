@@ -17,7 +17,7 @@ public class ValidUser {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="Vailid_UserId")
+	@Column(name="Valid_UserId")
 	private int validId;
 	@NotEmpty(message = "Enter Email")
 	@Column(name="Email",nullable=false,unique=true)
@@ -62,7 +62,7 @@ public class ValidUser {
 	}
 	public ValidUser() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	@Override
 	public String toString() {
@@ -70,7 +70,4 @@ public class ValidUser {
 				+ ", password=" + password + ", userdetails=" + userdetails
 				+ "]";
 	}
-
-	
-	
 }

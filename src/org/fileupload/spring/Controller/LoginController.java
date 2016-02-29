@@ -40,7 +40,10 @@ public class LoginController {
 		if(result.hasErrors()){
 			return "Login";
 		}
-		
+		boolean valid = userdao.checkValidity(validuser);
+		if(valid){
+			return "Success";
+		}
 		return "redirect:/Signup";
 	}
 
